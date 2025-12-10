@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 IT’S A MATCH ! 🔥</title>
+<style>
+    /* Reset de base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #FF6B6B, #FFD93D);
+        color: #fff;
+        text-align: center;
+        overflow-x: hidden;
+        padding: 20px;
+        position: relative;
+    }
+
+    /* Confettis */
+    .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        opacity: 0.8;
+        top: -10px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); }
+        100% { transform: translateY(120vh) rotate(360deg); }
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 0.5em;
+        animation: bounce 1s infinite alternate, glow 1.5s infinite alternate;
+        text-shadow: 0 0 10px #fff, 0 0 20px #FFD93D;
+    }
+
+    @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-15px); } }
+    @keyframes glow { from { text-shadow: 0 0 10px #fff; } to { text-shadow: 0 0 20px #FFD93D, 0 0 40px #FF6B6B; } }
+
+    p {
+        font-size: 1em;
+        line-height: 1.6em;
+        margin: 10px 0;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .highlight { font-weight: bold; color: #FFD93D; }
+
+    .doudoune-img {
+        width: 90%;
+        max-width: 300px;
+        margin: 20px auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        transition: transform 0.5s, box-shadow 0.5s;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .cta {
+        display: block;
+        margin: 20px auto;
+        padding: 15px 25px;
+        background: #fff;
+        color: #FF6B6B;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px;
+        width: 80%;
+        max-width: 300px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: pulse 1s infinite alternate;
+    }
+
+    .cta:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+    @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.05); } }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 1.8em; }
+        p { font-size: 0.95em; }
+    }
+</style>
+</head>
+<body>
+
+<h1>🔥 IT’S A MATCH ! 🔥</h1>
+<p>Toi ❤️ La Doudoune Inisup</p>
+<p>Tu cherchais quelqu’un pour te tenir chaud cet hiver ? Il cherche quelqu’un pour l’adopter.</p>
+
+<img class="doudoune-img" src="https://via.placeholder.com/400x400.png?text=Doudoune+Inisup" alt="Doudoune Inisup">
+
+<p class="highlight">➡️ Doudoune Inisup – 34,90 €<br>
+➡️ 50 précommandes = production lancée<br>
+➡️ Qualités : chaude, fidèle, va avec tout, meilleure qu’un date</p>
+
+<p>Envie de commander ta doudoune ? Envoie un mail à <strong>nathanaguillaume@gmail.com</strong> ou par Instagram <strong>@aguillaumenathan</strong> avec :</p>
+<p>Nom / Prénom / Promo / Email / Numéro</p>
+
+<p>📸 Envie de voir la doudoune avant le match ? Je t’envoie une photo si tu veux.<br>
+Fais fondre personne, mais reste au chaud. 😎</p>
+
+<a class="cta" href="mailto:nathanaguillaume@gmail.com">Commander maintenant</a>
+
+<script>
+    // Générer des confettis
+    const colors = ['#FFD93D','#FF6B6B','#6BCB77','#4D96FF','#FFCA3A'];
+    for(let i=0;i<50;i++){
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random()*100 + 'vw';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+        confetti.style.width = confetti.style.height = Math.random()*8+5 + 'px';
+        confetti.style.animationDuration = Math.random()*3+2 + 's';
+        confetti.style.animationDelay = Math.random()*5 + 's';
+        document.body.appendChild(confetti);
+    }
+</script>
+
+</body>
+</html>
