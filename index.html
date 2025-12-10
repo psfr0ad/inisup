@@ -1,133 +1,378 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 IT’S A MATCH ! 🔥</title>
-<style>
-    /* Reset de base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        font-family: 'Arial', sans-serif;
-        background: linear-gradient(135deg, #FF6B6B, #FFD93D);
-        color: #fff;
-        text-align: center;
-        overflow-x: hidden;
-        padding: 20px;
-        position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Précommandez la doudoune Inisup : chaude, stylée et qualitative. Livraison garantie dès 50 précommandes. Offre exclusive à 34,90 €.">
+    <meta name="keywords" content="doudoune, Inisup, précommande, veste chaude, promo étudiante">
+    <meta property="og:title" content="IT’S A MATCH ❤️ – Doudoune Inisup">
+    <meta property="og:description" content="Précommandez la doudoune Inisup : chaude, stylée et qualitative. Livraison garantie dès 50 précommandes. Offre exclusive à 34,90 €.">
+    <meta property="og:image" content="picture.jpeg">
+    <meta property="og:url" content="https://votre-site.com/doudoune-inisup">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#ff726f">
+    <title>IT’S A MATCH ❤️ – Doudoune Inisup | Précommande exclusive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff726f;
+            --primary-light: #ff9b6f;
+            --secondary: #ffe27a;
+            --text: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.9);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.3);
+            --radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --easing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
 
-    /* Confettis */
-    .confetti {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #fff;
-        opacity: 0.8;
-        top: -10px;
-        animation: fall linear infinite;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    @keyframes fall {
-        0% { transform: translateY(0) rotate(0deg); }
-        100% { transform: translateY(120vh) rotate(360deg); }
-    }
+        body {
+            font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--text);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
 
-    h1 {
-        font-size: 2.2em;
-        margin-bottom: 0.5em;
-        animation: bounce 1s infinite alternate, glow 1.5s infinite alternate;
-        text-shadow: 0 0 10px #fff, 0 0 20px #FFD93D;
-    }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 2rem 1rem;
+            opacity: 0;
+            transform: translateY(20px) rotateX(15deg);
+            animation: fadeIn 0.8s var(--easing) forwards;
+        }
 
-    @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-15px); } }
-    @keyframes glow { from { text-shadow: 0 0 10px #fff; } to { text-shadow: 0 0 20px #FFD93D, 0 0 40px #FF6B6B; } }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
 
-    p {
-        font-size: 1em;
-        line-height: 1.6em;
-        margin: 10px 0;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s var(--easing) 0.2s forwards;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    .highlight { font-weight: bold; color: #FFD93D; }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .doudoune-img {
-        width: 90%;
-        max-width: 300px;
-        margin: 20px auto;
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        transition: transform 0.5s, box-shadow 0.5s;
-        animation: float 3s ease-in-out infinite;
-    }
+        .subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: 600;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s var(--easing) 0.4s forwards;
+        }
 
-    @keyframes float {
-        0%,100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+            transform: translateY(20px) scale(0.95);
+            animation: floatIn 0.8s var(--easing) 0.6s forwards, float 6s ease-in-out 1.4s infinite;
+            position: relative;
+            transition: transform 0.3s var(--easing);
+        }
 
-    .cta {
-        display: block;
-        margin: 20px auto;
-        padding: 15px 25px;
-        background: #fff;
-        color: #FF6B6B;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 50px;
-        width: 80%;
-        max-width: 300px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        animation: pulse 1s infinite alternate;
-    }
+        @keyframes floatIn {
+            to {
+                transform: translateY(0) scale(1);
+            }
+        }
 
-    .cta:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-6px) scale(1.01); }
+        }
 
-    @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.05); } }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.3s var(--easing);
+        }
 
-    @media (max-width: 480px) {
-        h1 { font-size: 1.8em; }
-        p { font-size: 0.95em; }
-    }
-</style>
+        .hero-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .price {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            color: var(--secondary);
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+            margin: 2rem 0;
+            background: linear-gradient(135deg, var(--secondary), #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: popIn 0.6s var(--easing) 1s forwards;
+        }
+
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            margin: 2rem auto;
+            border-radius: var(--radius);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s var(--easing) 1.2s forwards;
+        }
+
+        .info-box p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: fadeInLeft 0.5s var(--easing) 1.4s forwards;
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .info-box p:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .info-box p:nth-child(3) {
+            animation-delay: 1.6s;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1rem 0;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.5s var(--easing) 1.7s forwards;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-instructions {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin: 2rem auto;
+            padding: 0 1rem;
+            max-width: 400px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s var(--easing) 1.8s forwards;
+        }
+
+        .cta {
+            display: block;
+            margin: 2.5rem auto;
+            padding: 1rem 2rem;
+            background: var(--text);
+            color: var(--primary);
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            max-width: 350px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: popIn 0.6s var(--easing) 2s forwards;
+        }
+
+        .cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .instagram {
+            display: inline-block;
+            margin: 1.5rem auto 0;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s var(--easing) 2.2s forwards;
+            transition: var(--transition);
+        }
+
+        .instagram:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            color: var(--text);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s var(--easing) 2.4s forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .container {
+                padding: 1rem 0.8rem;
+            }
+        }
+
+        /* Effet de confettis */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>IT’S A MATCH ❤️</h1>
+            <p class="subtitle">Toi & la Doudoune Inisup</p>
+        </header>
+        <div class="hero-image">
+            <img src="picture.jpeg" alt="Doudoune Inisup – Modèle exclusif, chaude et stylée" loading="lazy">
+        </div>
+        <div class="price">34,90 €</div>
+        <div class="info-box">
+            <p><strong>50 précommandes atteintes</strong> → Production lancée !</p>
+            <p>Livraison prévue : <strong>décembre 2025</strong></p>
+            <div class="features">
+                <span class="feature">Chaude</span>
+                <span class="feature">Stylée</span>
+                <span class="feature">Qualitative</span>
+                <span class="feature">Passe-partout</span>
+            </div>
+            <p><strong>Garantie satisfaction 100%</strong></p>
+        </div>
+        <div class="form-instructions">
+            <p>Pour précommander, envoie-nous :</p>
+            <p><strong>Nom — Prénom — Promo — Email — Téléphone</strong></p>
+        </div>
+        <a class="cta"
+           href="mailto:nathanaguillaume@gmail.com?subject=Précommande%20Doudoune%20Inisup&body=Bonjour%20Nathan,%0A%0AJe%20souhaite%20précommander%20la%20doudoune%20Inisup.%0A%0AMes%20coordonnées%20:%0ANom%20:%0APrénom%20:%0APromo%20:%0AEmail%20:%0ATéléphone%20:%0A%0AMerci%20!">
+            Précommander maintenant
+        </a>
+        <a href="https://instagram.com/aguillaumenathan" class="instagram" target="_blank" rel="noopener noreferrer">
+            @aguillaumenathan
+        </a>
+        <footer class="footer">
+            <p>Plus de photos disponibles sur demande.</p>
+            <p>© 2025 Doudoune Inisup – Tous droits réservés.</p>
+        </footer>
+    </div>
 
-<h1>🔥 IT’S A MATCH ! 🔥</h1>
-<p>Toi ❤️ La Doudoune Inisup</p>
-<p>Tu cherchais quelqu’un pour te tenir chaud cet hiver ? Il cherche quelqu’un pour l’adopter.</p>
+    <script>
+        // Animation de confettis
+        document.addEventListener('DOMContentLoaded', function() {
+            const confettiCount = 50;
+            const container = document.querySelector('.container');
 
-<img class="doudoune-img" src="picture.jpeg" alt="Doudoune Inisup">
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = Math.random() * 100 + 'vh';
+                confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+                confetti.style.opacity = Math.random() * 0.7 + 0.3;
+                document.body.appendChild(confetti);
+            }
 
-<p class="highlight">➡️ Doudoune Inisup – 34,90 €<br>
-➡️ 50 précommandes = production lancée<br>
-➡️ Qualités : chaude, fidèle, va avec tout, meilleure qu’un date</p>
-
-<p>Envie de commander ta doudoune ? Envoie un mail à <strong>nathanaguillaume@gmail.com</strong> ou par Instagram <strong>@aguillaumenathan</strong> avec :</p>
-<p>Nom / Prénom / Promo / Email / Numéro</p>
-
-<p>📸 Envie de voir la doudoune avant le match ? Je t’envoie une photo si tu veux.<br>
-Fais fondre personne, mais reste au chaud. 😎</p>
-
-<a class="cta" href="mailto:nathanaguillaume@gmail.com">Commander maintenant</a>
-
-<script>
-    // Générer des confettis
-    const colors = ['#FFD93D','#FF6B6B','#6BCB77','#4D96FF','#FFCA3A'];
-    for(let i=0;i<50;i++){
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.left = Math.random()*100 + 'vw';
-        confetti.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-        confetti.style.width = confetti.style.height = Math.random()*8+5 + 'px';
-        confetti.style.animationDuration = Math.random()*3+2 + 's';
-        confetti.style.animationDelay = Math.random()*5 + 's';
-        document.body.appendChild(confetti);
-    }
-</script>
-
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fall {
+                    0% { transform: translateY(-100vh) rotate(0deg); }
+                    100% { transform: translateY(100vh) rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </body>
 </html>
